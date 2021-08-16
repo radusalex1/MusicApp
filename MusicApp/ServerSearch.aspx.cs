@@ -16,14 +16,15 @@ public partial class _Default : System.Web.UI.Page
 
     public void Search(string Title)
     {
+        var ApiKey = ConfigurationManager.AppSettings["YtApiKey"];
         var youtubeService = new YouTubeService(new BaseClientService.Initializer()
         {
-            ApiKey = "AIzaSyAmUYtDSO0B8HIm9IEUH5Syb32pPiqt6NA",
+            ApiKey = ApiKey,
             ApplicationName = this.GetType().ToString()
-        });
+        }); ;
 
         var searchListRequest = youtubeService.Search.List("snippet");
-        Console.WriteLine("Give the name of a song:");
+        
         string temp = Title;
 
         searchListRequest.Q = temp; // Replace with your search term.
@@ -33,8 +34,6 @@ public partial class _Default : System.Web.UI.Page
         var searchListResponse = searchListRequest.Execute();
 
         List<string> videos = new List<string>();
-        List<string> channels = new List<string>();
-        List<string> playlists = new List<string>();
 
         // Add each result to the appropriate list, and then display the lists of
         // matching videos, channels, and playlists.
