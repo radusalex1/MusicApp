@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Web.Script.Serialization;
-
+using System.Configuration;
 public partial class _Default : System.Web.UI.Page
 {
+    string ConnectionString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+
     public void FetchIdsFromDboHelper(List<string> list )
     {
-        var con = new SqlConnection(@"Data Source = DESKTOP-UHVJFHG\MSSQLSERVER2014; Initial Catalog = MusicApp; User Id = sa; Password = as");
+        
+        var con = new SqlConnection(ConnectionString);
         con.Open();
         
             var cmd = new SqlCommand("select top(10) YoutubeId from SongsMainTable where SentToPlayPart = 0;", con);
@@ -32,7 +35,7 @@ public partial class _Default : System.Web.UI.Page
 
     public void updateSongs()
     {
-        var con = new SqlConnection(@"Data Source = DESKTOP-UHVJFHG\MSSQLSERVER2014; Initial Catalog = MusicApp; User Id = sa; Password = as");
+        var con = new SqlConnection(ConnectionString);
         con.Open();
         var cmd_update = new SqlCommand("update SongsMainTable set SentToPlayPart = 1  where SentToPlayPart=0",con);
         cmd_update.ExecuteNonQuery();

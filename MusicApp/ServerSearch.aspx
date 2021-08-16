@@ -25,8 +25,6 @@
         }
     </script>
 
-
-
         <asp:Button ID="btn_input" runat="server" OnClick="btn_input_ClickAsync" Text="Add to queue..." Width="176px" BorderColor="Green" ForeColor="blue" Height="58px" />
         <p>
             &nbsp;</p>

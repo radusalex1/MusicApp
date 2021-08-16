@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
+using System.Configuration;
 
 public partial class _Default : System.Web.UI.Page
 {
+    string ConnectionString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
     public void btn_input_ClickAsync(Object sender, EventArgs e)
     {
         string title = inputSong.Text;
@@ -51,7 +53,8 @@ public partial class _Default : System.Web.UI.Page
 
     public void InsertIdToDbo(string title, string id)
     {
-        var con = new SqlConnection(@"Data Source = DESKTOP-UHVJFHG\MSSQLSERVER2014; Initial Catalog = MusicApp; User Id = sa; Password = as"); con.Open();
+        var con = new SqlConnection(ConnectionString); 
+        con.Open();
         var insert_cmd = new SqlCommand("insert into SongsMainTable (Name,YoutubeId,SentToPlayPart) values (@name,@idStatus,@idTrimis)", con);
         insert_cmd.Parameters.AddWithValue("@name", title);
         insert_cmd.Parameters.AddWithValue("@idStatus", id);
