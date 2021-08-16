@@ -9,7 +9,7 @@
 </head>
     <style>
         body{
-            background-color:chocolate;
+            background-color:blue;
         }
     </style>
 <body>
@@ -24,6 +24,8 @@
             document.getElementById("inputSong").value = '';
         }
     </script>
+
+
 
         <asp:Button ID="btn_input" runat="server" OnClick="btn_input_ClickAsync" Text="Add to queue..." Width="176px" BorderColor="Green" ForeColor="blue" Height="58px" />
         <p>
