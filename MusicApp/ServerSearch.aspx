@@ -9,7 +9,7 @@
 </head>
     <style>
         body{
-            background-color:red;
+            background-color:chocolate;
         }
     </style>
 <body>
