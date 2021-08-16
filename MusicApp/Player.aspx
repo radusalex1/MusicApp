@@ -8,7 +8,7 @@
 </head>
     <style>
         body{
-            background-color:darkgoldenrod;
+            background-color:red;
         }
     </style>
 <body>
