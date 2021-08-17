@@ -9,7 +9,6 @@ public partial class _Default : System.Web.UI.Page
 
     public void FetchIdsFromDboHelper(List<string> list )
     {
-        
         var con = new SqlConnection(ConnectionString);
         con.Open();
         
@@ -26,6 +25,7 @@ public partial class _Default : System.Web.UI.Page
     public void FetchIdsFromDBo_click(object sender, EventArgs e)
     {
         List<string> list = new List<string>();
+
         FetchIdsFromDboHelper(list);
         string serializedList = (new JavaScriptSerializer()).Serialize(list);
         ListOfIds.Value += serializedList;
