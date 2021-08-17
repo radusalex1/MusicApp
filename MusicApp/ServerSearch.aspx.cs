@@ -4,14 +4,35 @@ using System.Data.SqlClient;
 using Google.Apis.Services;
 using Google.Apis.YouTube.v3;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 public partial class _Default : System.Web.UI.Page
 {
     string ConnectionString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
+
+    public bool ValidTitle(string title)
+    {
+        int errorCounter = Regex.Matches(title, @"[a-zA-Z]").Count;
+        if(errorCounter!=0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public void btn_input_ClickAsync(Object sender, EventArgs e)
     {
         string title = inputSong.Text;
-        Search(title);
+        if(title!="" && ValidTitle(title)==true)
+        {
+            Search(title);
+        }
+        else
+        {
+            Response.Write("<script>alert('Please insert a title');</script>");
+        }
     }
 
     public void Search(string Title)
