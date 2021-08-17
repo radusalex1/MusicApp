@@ -21,7 +21,7 @@ public partial class _Default : System.Web.UI.Page
         {
             ApiKey = ApiKey,
             ApplicationName = this.GetType().ToString()
-        }); ;
+        });
 
         var searchListRequest = youtubeService.Search.List("snippet");
         
