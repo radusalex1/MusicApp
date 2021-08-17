@@ -59,6 +59,7 @@ public partial class _Default : System.Web.UI.Page
         insert_cmd.Parameters.AddWithValue("@idStatus", id);
         insert_cmd.Parameters.AddWithValue("@idTrimis", 0);
         insert_cmd.ExecuteNonQuery();
+        Response.Write("<script>alert('Added to queue');</script>");
         con.Close();
     }
 
