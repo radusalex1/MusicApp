@@ -8,13 +8,13 @@
 </head>
     <style>
         body{
-            background-color:lawngreen;
+            background-color:lightblue;
         }
     </style>
 <body>
     <form id="form1" runat="server">
         <br />
-        <asp:Button ID="FetchIdsFromDBo" runat="server" BackColor="Turquoise" Text="Don't click me" BorderColor="Yellow" OnClick="FetchIdsFromDBo_click" Width="226px" Height="49px"></asp:Button><br />
+        <asp:Button ID="FetchIdsFromDBo" runat="server" BackColor="Gray" Text="Don't click me" BorderColor="Gray" OnClick="FetchIdsFromDBo_click" Width="226px" Height="49px"></asp:Button><br />
         <input type="hidden" runat="server" id="ListOfIds" value="" />
 
         <div id="player" style="position: absolute; top: 100px; left: 100px;"></div>
