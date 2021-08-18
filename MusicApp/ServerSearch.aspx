@@ -1,6 +1,6 @@
 ﻿<%@ Page CodeBehind="~/ServerSearch.aspx.cs" Async="true" Language="C#" AutoEventWireup="true" CodeFile="ServerSearch.aspx.cs" Inherits="_Default" %>
 <!DOCTYPE html>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
