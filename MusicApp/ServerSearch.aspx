@@ -5,28 +5,40 @@
 <head runat="server">
 
     <title>Welcome to party</title>
+
 </head>
+
     <style>
         body{
+            margin-top:2cm;
+            text-align: center;
             background-color:chocolate;
         }
-    </style>
-<body>
-    <form id="form1" runat="server">
-        <asp:TextBox ID="inputSong" placeholder="Enter song name here..." runat="server"></asp:TextBox>Any search costs 100 units.... use it wisely:))----10,000 units per day----<br />
+        form{
+            
+            display: inline-block;
 
-        <br />
-       
-        <script src="http://www.youtube.com/player_api"></script>
+        }
+    </style>
+
+    <script src="http://www.youtube.com/player_api">
+
+    </script>
+
     <script>
-        if (document.getElementById("inputSong").value != "") {
+        if(document.getElementById("inputSong").value != "")
+        {
             document.getElementById("inputSong").value = '';
         }
     </script>
 
-        <asp:Button ID="btn_input" runat="server" OnClick="btn_input_ClickAsync" Text="Add to queue..." Width="176px" BorderColor="Green" ForeColor="blue" Height="58px" />
+<body>
+    <form id="form1" runat="server">
+        <asp:TextBox ID="inputSong" placeholder="Enter song name here..." runat="server"></asp:TextBox><br />
+        <br/>
+        <asp:Button ID="btn_input" runat="server" OnClick="btn_input_ClickAsync" Text="Add to queue..." Width="176px" BorderColor="brown" BackColor="Brown"  ForeColor="Black" Height="58px" />
         <p>
             &nbsp;</p>
     </form>
-    </body>
+</body>
 </html>
