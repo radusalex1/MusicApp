@@ -21,21 +21,21 @@
         }
     </style>
 
-    <script src="http://www.youtube.com/player_api">
-
-    </script>
-
-    <script>
-        if(document.getElementById("inputSong").value != "")
-        {
-            document.getElementById("inputSong").value = '';
-        }
-    </script>
+    
 
 <body>
     <form id="form1" runat="server">
         <asp:TextBox ID="inputSong" placeholder="Enter song name here..." runat="server"></asp:TextBox><br />
         <br/>
+
+        <script>
+            if (document.getElementById("inputSong").value != "")
+            {
+                document.getElementById("inputSong").value = '';
+            }
+        </script>
+        <script src="http://www.youtube.com/player_api"></script>
+
         <asp:Button ID="btn_input" runat="server" OnClick="btn_input_ClickAsync" Text="Add to queue..." Width="176px" BorderColor="brown" BackColor="Brown"  ForeColor="Black" Height="58px" />
         <p>
             &nbsp;</p>
